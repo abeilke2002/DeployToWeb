@@ -199,8 +199,9 @@
 
                         fig1, ax1 = plt.subplots()
                         plt.imshow(generated_img)                                     ##, cmap='summer')
-                        plt.colorbar(label="Colorbar", orientation="vertical")
                         ax1.set_title(str_conditions)
+                        ax[0].axis('off')
+                        ax[1].axis('off')
 
                         ## Element('mpl').element.innerText = ""        ## use this to not accumulate imgs
                         display(fig1, target="mpl")
