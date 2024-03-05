@@ -26,29 +26,23 @@
       
         <div>Type conditions here: </div>
    
- <table>
+  <table>
  
   <tr>
      <td> Size </td>
-     <td> <input type="range" style="border:3px solid #F7730E;" min="1" max="10" value="1" id="testInput1"/> </td>
-  </tr>
-  
-  <tr>
-       <td> Is White </td>
-     <td>   <input type="range" style="border:3px solid #F7730E;" min="0" max="1" value="0" id="testInput2"/> </td>
-  </tr>
+     <td> <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput1"/> </td>
 
-  <tr>
+       <td> Is White (1 = Yes) </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="175" id="testInput2"/> </td>
+
        <td> Age </td>
-     <td>  <input type="range" style="border:3px solid #F7730E;" min="1" max="10" value="1" id="testInput3"/> </td>
-  </tr>
+     <td>  <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput3"/> </td>
 
-  <tr>
-       <td> Cuteness Level </td>
-     <td>   <input type="range" style="border:3px solid #F7730E;" min="1" max="10" value="1" id="testInput4"/> </td>
-  </tr>
+       <td> Cuteness Level (10 = Max) </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput4"/> </td>
 
-</table> 
+ 
+ </table> 
 
 
        
@@ -85,8 +79,6 @@
                     from pyodide.http import open_url
                     from js import console
                     from mpl_toolkits.axes_grid1 import make_axes_locatable
-                    from pyodide import create_proxy
-                    from js import document
 
                  
                     ###########################################
@@ -132,10 +124,10 @@
                     ##################################################
 
                     def get_np_conditions_vector():
-                        c1 = float(document.getElementById('testInput1').value)
-                        c2 = float(document.getElementById('testInput2').value)
-                        c3 = float(document.getElementById('testInput3').value)
-                        c4 = float(document.getElementById('testInput4').value)
+                        c1 = float( Element('testInput1').element.value )
+                        c2 = float( Element('testInput2').element.value )
+                        c3 = float( Element('testInput3').element.value )
+                        c4 = float( Element('testInput4').element.value )
 
 
                         conditions_list = [c1, c2, c3, c4]
