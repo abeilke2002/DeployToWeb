@@ -197,8 +197,8 @@
                         str_conditions = str_conditions.replace("]","")
                         #####################################################
 
-                        fig1, ax = plt.subplots()
-                        ax.imshow(generated_img) # Use ax to call imshow
+                        fig1, ax = plt.subplots(figsize = (12,6))
+                        ax.imshow(generated_img, cmap = "grey") # Use ax to call imshow
                         ax.set_title(str_conditions)
                         ax.axis('off') # Directly modify the ax object, not ax[0] or ax[1]
 
