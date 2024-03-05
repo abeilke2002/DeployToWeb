@@ -130,10 +130,10 @@
                     ##################################################
 
                     def get_np_conditions_vector():
-                        c1 = float( Element('testInput1').element.value )
-                        c2 = float( Element('testInput2').element.element.value )
-                        c3 = float( Element('testInput3').element.value )
-                        c4 = float( Element('testInput4').element.value )
+                        c1 = float(document.getElementById('testInput1').value)
+                        c2 = float(document.getElementById('testInput2').value)
+                        c3 = float(document.getElementById('testInput3').value)
+                        c4 = float(document.getElementById('testInput4').value)
 
 
                         conditions_list = [c1, c2, c3, c4]
