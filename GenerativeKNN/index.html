@@ -198,10 +198,10 @@
                         #####################################################
 
                         fig1, ax = plt.subplots()
-                        plt.imshow(generated_img)                                     ##, cmap='summer')
+                        ax.imshow(generated_img) # Use ax to call imshow
                         ax.set_title(str_conditions)
-                        ax[0].axis('off')
-                        ax[1].axis('off')
+                        ax.axis('off') # Directly modify the ax object, not ax[0] or ax[1]
+
 
                         ## Element('mpl').element.innerText = ""        ## use this to not accumulate imgs
                         display(fig1, target="mpl")
