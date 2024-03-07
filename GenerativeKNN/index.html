@@ -105,24 +105,30 @@
                         return avg_gen_img
 
                     ##################################################
-
                     def get_np_conditions_vector():
-                        c1 = float( Element('testInput1').element.value )
-                        c2 = float( Element('testInput2').element.value )
-                        c3 = float( Element('testInput3').element.value )
-                        c4 = float( Element('testInput4').element.value )
-                        c5 = float( Element('testInput5').element.value )
-                        c6 = float( Element('testInput6').element.value )
-                        c7 = float( Element('testInput7').element.value )
-                        c8 = float( Element('testInput8').element.value )
-                        c9 = float( Element('testInput9').element.value )
-                        c10 = float( Element('testInput10').element.value )
+                        # Initialize an empty list to hold condition values
+                        conditions_list = []
+    
+                        # List of element IDs corresponding to the conditions
+                        element_ids = ['testInput1', 'testInput2', 'testInput3', 'testInput4']
+    
+                        for element_id in element_ids:
+                            # Attempt to fetch the element by ID
+                            element = document.getElementById(element_id)
+        
+                            # Check if the element exists
+                            if element is not None:
 
-                        conditions_list = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
+                                conditions_list.append(float(element.value))
+                            else:
+
+                                conditions_list.append(0)  # or handle this case as appropriate
+    
+                        # Convert the list to a NumPy array and return
                         np_conditions_list = np.array(conditions_list)
                         np_conditions_list = np.expand_dims(np_conditions_list, axis=0)
-
                         return np_conditions_list
+
 
                     ##################################################
 
