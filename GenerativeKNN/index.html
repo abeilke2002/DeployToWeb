@@ -156,10 +156,10 @@
                         str_conditions = str_conditions.replace("]","")
                         #####################################################
 
-                        fig1, ax = plt.subplots(figsize = (12,6))
-                        ax.imshow(generated_img, cmap = "gray") # Use ax to call imshow
+                        fig1, ax = plt.subplots(figsize=(24, 12))  # Adjust the figsize here
+                        ax.imshow(generated_img, cmap="gray")  # Use ax to call imshow
                         ax.set_title(str_conditions)
-                        ax.axis('off') # Directly modify the ax object, not ax[0] or ax[1]
+                        ax.axis('off')
 
 
                         ## Element('mpl').element.innerText = ""        ## use this to not accumulate imgs
