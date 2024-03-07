@@ -6,14 +6,6 @@
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <link rel="stylesheet" href="./assets/css/examples.css" />
-    <style>
-        #mpl {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: fit-content; /* This makes the div's width adjust to its content */
-        }
-    </style>
     
 </head>
 <body>
@@ -165,7 +157,7 @@
                         str_conditions = str_conditions.replace("]","")
                         #####################################################
 
-                        fig1, ax = plt.subplots(figsize=(35, 6))  # Adjust the figsize here
+                        fig1, ax = plt.subplots(figsize=(24, 6))  # Adjust the figsize here
                         ax.imshow(generated_img, cmap="gray")  # Use ax to call imshow
                         ax.set_title(str_conditions)
                         ax.axis('off')
